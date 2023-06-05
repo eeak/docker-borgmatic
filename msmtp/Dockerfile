@@ -7,6 +7,7 @@ COPY data/borgmatic.d /etc/borgmatic.d
 RUN apk upgrade --no-cache \
     && apk add --no-cache \
     msmtp \
+    rsync \
     && ln -sf /usr/bin/msmtp /usr/sbin/sendmail \
     && rm -rf /var/cache/apk/* \
     && chmod 755 /entry.sh
